@@ -2,11 +2,13 @@
 
 > Smart contract vulnerabilities derived from real-world attacks, with protected and vulnerable contracts, executable PoCs, and execution environments.
 
-[Overview](#overview) · [Downloads](#downloads) · [Getting started](#getting-started) · [Dataset card](DATASET_CARD.md) · [Catalog](catalog.json)
+[Overview](#overview) · [Downloads](#downloads) · [Getting started](#getting-started) · [Incident references](#incident-references) · [Dataset card](DATASET_CARD.md) · [Catalog](catalog.json)
 
 | Dataset records | Incident-derived lineages | Recorded passing PoC executions |
 | :---: | :---: | :---: |
 | **767** | **7** | **1,534** |
+
+**We will continue to update this dataset.**
 
 ## Overview
 
@@ -86,6 +88,20 @@ The catalog records historical pipeline quality labels for **666 Strong**, **56 
 `ODOS.zip` also provides source inputs for detection and training at `odos_isvalidsigimpl_erc6492_side_effect_call/masked_inputs/`. This view covers all **344 ODOS records** and replaces eligible occurrences of two diagnostic strings introduced during construction, `side effects disabled` and `side effect failed`, with `STR`. Its README documents the masking rule, and its manifest maps the files to their original counterparts.
 
 Use the masked sources as model inputs and the original PoC projects for execution. The recorded execution results belong to the original projects. The paper's ODOS training experiment uses **298 dataset records** from a separately frozen pool with the same masking policy.
+
+## Incident references
+
+The following incidents provide the vulnerability sources for the seven lineages. Each row links to the incident contract and the attack transaction referenced in the paper.
+
+| Lineage | Chain | Incident entry | Incident contract | Attack evidence |
+| --- | --- | --- | --- | --- |
+| BCBC | BSC | `setReward` | [Contract source](https://bscscan.com/address/0xbCbCb0e7E28414e084c4a40C1cCC30B75629a7DE#code) | [Attack transaction](https://app.blocksec.com/explorer/tx/bsc/0xe15d6f7fa891c2626819209edf2d5ded6948310eaada067b400062aa022ce718) |
+| ByToken | BSC | `triggerAutoBurn` | [Contract source](https://bscscan.com/address/0x6f50cffEcd4e00EcF7E442774C08c089450B62Ca#code) | [Attack transaction](https://bscscan.com/tx/0xe31c681eee764fb94b1b6bda3bbb0e4f25acb129c19040b9f58ad30541980979) |
+| SorStaking | Ethereum | `withdraw` | [Contract source](https://etherscan.io/address/0x5d16b8Ba2a9a4ECA6126635a6FFbF05b52727d50#code) | [Attack transaction](https://app.blocksec.com/explorer/tx/eth/0x6439d63cc57fb68a32ea8ffd8f02496e8abad67292be94904c0b47a4d14ce90d) |
+| ODOS | Base | `isValidSigImpl` | [Contract source](https://basescan.org/address/0xB6333E994Fd02a9255E794C177EfBDEB1FE779C7#code) | [Attack transaction](https://basescan.org/tx/0xd10faa5b33ddb501b1dc6430896c966048271f2510ff9ed681dd6d510c5df9f6) |
+| MURE | Ethereum | `distribute` | [Contract source](https://etherscan.io/address/0x365083717eFB17F3895290BA38f20F568C7A4D8a#code) | [Attack transaction](https://etherscan.io/tx/0xb83040361a0ec72fa2d06ad69493226518a5f8b5d96c19b400626248f9c5b798) |
+| Legendary | BSC | `cliamRewred` | [Contract source](https://bscscan.com/address/0x92D60629FF5d53a0098B51E9b1D59546D1D8e5B6#code) | [Attack transaction](https://bscscan.com/tx/0x15c835c070672948b3487d35254bce96831bec9f5212f78b04e683fed74bf4a2) |
+| GPU | BSC | `transfer` | [Contract source](https://bscscan.com/address/0xf51CBf9F8E089Ca48e454EB79731037a405972ce#code) | [Attack transaction](https://app.blocksec.com/explorer/tx/bsc/0x2c0ada695a507d7a03f4f308f545c7db4847b2b2c82de79e702d655d8c95dadb) |
 
 ## Source and attribution
 

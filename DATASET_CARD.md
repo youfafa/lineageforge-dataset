@@ -4,6 +4,8 @@
 
 This release provides **767 dataset records** constructed by LineageForge from vulnerabilities observed in real-world attacks. The records are organized into seven lineages, each derived from a selected real-world incident.
 
+**We will continue to update this dataset.**
+
 Each dataset record contains a **protected contract S1**, its corresponding **vulnerable contract S2**, executable **proof-of-concept (PoC) attacks**, and the execution environment. S2 is derived from S1 through targeted code changes. The corresponding PoCs execute equivalent attacker actions under relevant preconditions to check whether the intended exploit succeeds in S2 and is blocked in S1.
 
 | Lineage | Records |
@@ -22,6 +24,8 @@ The paper reports **797 accepted dataset records** from the construction campaig
 ## Source processing
 
 The source contracts come from the [Sourcify verified contract corpus](https://docs.sourcify.dev/docs/repository/download-dataset/). LineageForge identifies compatible contracts, constructs S1 and S2, and adapts the corresponding PoCs.
+
+The [incident references](README.md#incident-references) list the source incident contracts and attack transactions for all seven lineages.
 
 The executable archive uses the `comments_only_v2` policy. Ordinary Solidity comments are replaced with whitespace, preserving line breaks and character positions. Copyright and licence notices, compiler directives, strings, identifiers, conditions and assertions are retained. The cleaning reports record the transformations for each case.
 
