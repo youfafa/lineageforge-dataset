@@ -49,6 +49,18 @@ This transformation changes 592 locations across 586 target files. Another 102 t
 
 Use the masked sources as model inputs and the original PoC projects for execution. The recorded execution results belong to the original projects. The paper's ODOS training experiment uses **298 dataset records** from a separately frozen pool with the same masking policy.
 
+## Token usage and cost
+
+This construction campaign primarily used **DeepSeek V4 Flash 0423 (April version)**, with additional DeepSeek V4 Pro calls. The table reports total API usage and cost for the campaign.
+
+| Metric | Total |
+| --- | ---: |
+| Tokens | **380,471,095** |
+| API requests | **19,465** |
+| Reported API cost | **¥239.82 CNY** |
+
+We will update these usage and cost figures alongside future dataset updates.
+
 ## File metadata
 
 **S0** denotes the source contract used for construction. The `components.json` file stores original source component snapshots alongside the corresponding code in S1 and S2. The `manifest.json` file records the files and execution configuration of each dataset record, and `cleaning_report.json` documents comment processing.

@@ -2,7 +2,7 @@
 
 > Smart contract vulnerabilities derived from real-world attacks, with protected and vulnerable contracts, executable PoCs, and execution environments.
 
-[Overview](#overview) · [Downloads](#downloads) · [Getting started](#getting-started) · [Incident references](#incident-references) · [Dataset card](DATASET_CARD.md) · [Catalog](catalog.json)
+[Overview](#overview) · [Downloads](#downloads) · [Getting started](#getting-started) · [Token usage and cost](#token-usage-and-cost) · [Incident references](#incident-references) · [Dataset card](DATASET_CARD.md) · [Catalog](catalog.json)
 
 | Dataset records | Incident-derived lineages | Recorded passing PoC executions |
 | :---: | :---: | :---: |
@@ -88,6 +88,18 @@ The catalog records historical pipeline quality labels for **666 Strong**, **56 
 `ODOS.zip` also provides source inputs for detection and training at `odos_isvalidsigimpl_erc6492_side_effect_call/masked_inputs/`. This view covers all **344 ODOS records** and replaces eligible occurrences of two diagnostic strings introduced during construction, `side effects disabled` and `side effect failed`, with `STR`. Its README documents the masking rule, and its manifest maps the files to their original counterparts.
 
 Use the masked sources as model inputs and the original PoC projects for execution. The recorded execution results belong to the original projects. The paper's ODOS training experiment uses **298 dataset records** from a separately frozen pool with the same masking policy.
+
+## Token usage and cost
+
+This construction campaign primarily used **DeepSeek V4 Flash 0423 (April version)**, with additional DeepSeek V4 Pro calls. The table reports total API usage and cost for the campaign.
+
+| Metric | Total |
+| --- | ---: |
+| Tokens | **380,471,095** |
+| API requests | **19,465** |
+| Reported API cost | **¥239.82 CNY** |
+
+We will update these usage and cost figures alongside future dataset updates.
 
 ## Incident references
 
